@@ -39,3 +39,38 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+
+## Instructions
+
+After starting the minesweeper-back-end process (npm start in that sub directory), run the front end using the npm start command mentioned above.
+
+You need two instances of the front end open in a browser, preferably side to side. On one of the browsers ensure Player 1 is selected, whilst Player 2 is selected in the other.
+
+Clicking with the left mouse button will attempt to reveal a square.
+If there is a mine there then sorry but you have lost already!!
+Click New Game to start a new game. The other player will be notified and you can both start again.
+
+If there isn't a mine on that square it will attempt to reveal as many squares as it can until it hits a square that is next to one or more mines.
+
+Each player should take turns revealing squares, and when ready, use the right mouse button to put your marker on where you think the mine is.
+
+Try and mark more mines than your opponent.
+
+### What's missing?
+
+I wanted to implement a proper user management process, using OAuth and having more than 2 players for each game. I ran into issue with the WebSocket implementation in regards to identifying unique users. 
+I did a similar communication process using SignalR in C# and didn't have this problem but I suspect there is a simple solution to this issue.
+
+I have provided some tests for the front end part of the exercise but these are by no means comprehensive - of course I would implement more given the time.
+
+I also didn't code the end game! If you reveal and/or mark all the squares nothing happens - Of course at this point I wanted to scan the grid and count how many mines were revealed by Player 1, Player 2, Player N and produce a popup
+leaderboard to show who did the best. 
+
+### Footnote
+
+I quite enjoyed the challenge and looking at improvements I would implement very large boards, 100x100 for example, that could be played with say 20 players. The number of mines would need to be high enough to provide a challenge, and 
+I would in that scenario perhaps restrict the distance that the reveal recursive algorithm could travel, to make it harder.
+
+
+
+
